@@ -29,8 +29,11 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Welcome/>
-        <List todos={"bim"} />
+     
         <Todo onNewTodo={this.onNewTodo.bind(this)} />
+
+        <List todos={this.props.newTodoList} />
+      
 
       </div>
     );
