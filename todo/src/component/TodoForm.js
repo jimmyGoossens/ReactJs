@@ -2,22 +2,24 @@ import React from 'react';
 
 
 export default class Todo extends React.Component {
-AddTodo(event){
+  AddTodo(event){
+
     event.preventDefault();
-    const txt = this.ToDoTitle.value;
+    var txt = this.TodoTitle.value;
     this.props.onNewTodo({
         title: txt,
-        done : false,
         createdAt: new Date()
     })
-}
+    console.log(this.TodoTitle.value);
+  }
+
 	render(){
 
 		return(
 
 			 <form>
-		      	<input type="text" ref={(input) => this.ToDoTitle = input} />
-		     	<button onClick={this.AddTodo.bind(this)} >Ajouter</button>
+		      	<input type="text" ref={(input) => this.TodoTitle = input} />
+		     	<button onClick= { e => this.AddTodo(e)} >Ajouter</button>
   			</form>				
 
 			);
